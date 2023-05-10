@@ -1,0 +1,69 @@
+
+*{
+    /* The CSS box-sizing property allows us to include the padding and border in an element's total width and height */
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    /* The background-size property specifies the size of the background images--> background-size: auto|length|cover|contain|initial|inherit; */
+    background-size: cover;
+
+    /* The background-position property sets the starting position of a background image. ...>  */
+    background-position: center;
+
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px; 
+    color: #fff;
+
+    /* The cursor property specifies the mouse cursor to be displayed when pointing over an element. */
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+
+
+     transition: flex 0.7s ease-out;
+  }
+
+  .panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+  
+  .panel.active {
+    flex: 5;
+  }
+  
+  .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+  
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+  }
